@@ -1,0 +1,23 @@
+Discriminant MACRO parA, parB, parC
+    mov ax, parB
+    mul ax, parB
+    mov bx, parA
+    mul bx, 4
+    mul bx, parC
+    sub ax, bx
+ENDM
+Pyfagor MACRO kat1, kat2
+    mov ax, kat1
+    mul ax, kat1
+    mov bx, kat2
+    mul bx, kat2
+    add ax, bx
+ENDM
+start:
+
+    Discriminant 4, 9, 5
+    mov cx, ax
+    Pyfagor 3, 5
+    
+end start
+
